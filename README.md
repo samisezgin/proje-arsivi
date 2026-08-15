@@ -38,6 +38,27 @@ gibi kaydedildiler. Derleme çıktıları (`bin/`, `obj/`, `target/`,
 |---|---|---|
 | `web3/hardhat-bootcamp` | Eyl 2023 | Hardhat + Solidity 0.8.19, mainnet fork ile test |
 
+## Python
+
+Bunlar `C:` üzerindeydi — yani formatla **gerçekten kaybolacaklardı**. İlk
+taramada gözden kaçtılar çünkü `requirements.txt` / `pyproject.toml`
+taşımıyorlar, tarama da bağımlılık dosyasına göre arıyordu.
+
+| Proje | Tarih | Not |
+|---|---|---|
+| `python/taskbarhero_optimizer` | Haz 2026 | Görüntü işlemeyle oyun otomasyonu — pencere bulma, ızgara okuma, düğme haritalama, tkinter arayüz |
+| `python/OllamaIntegration` | Haz 2026 | Ollama ile metin→görsel/video üretimi ve YouTube'a yükleme |
+| `python/PythonProject` | Oca 2026 | Faiz hesaplayıcı, birkaç sürüm |
+
+`OllamaIntegration` içinde **`client_secrets.json` ve `token.pickle`
+alınmadı** — Google OAuth istemci sırrı ve YouTube yükleme yetkisi taşıyan
+canlı token. Yeniden üretmek için Google Cloud Console'dan kendi OAuth
+istemcinizi indirip `client_secrets.json` olarak kaydedin; `token.pickle` ilk
+çalıştırmada kendiliğinden oluşur.
+
+`taskbarhero_optimizer` içindeki 128 ekran görüntüsü (73 MB) alınmadı — hata
+ayıklama çıktısı, yeniden üretilebilir. Kökteki üç örnek görsel duruyor.
+
 ## Arşivlenirken yapılan tek değişiklik
 
 `web3/hardhat-bootcamp/hardhat.config.ts` içinde **Alchemy API anahtarı açıkta
