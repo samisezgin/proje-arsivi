@@ -59,6 +59,29 @@ istemcinizi indirip `client_secrets.json` olarak kaydedin; `token.pickle` ilk
 `taskbarhero_optimizer` içindeki 128 ekran görüntüsü (73 MB) alınmadı — hata
 ayıklama çıktısı, yeniden üretilebilir. Kökteki üç örnek görsel duruyor.
 
+## Android / Aratek SDK
+
+`android/aratek-sdk-example-master` (Kas 2018) — Aratek biyometrik terminal SDK
+örneği: parmak izi, kimlik kartı, IC kart, barkod, QR ve yazıcı demoları.
+
+**Bu klasör bilerek olduğu gibi, hiçbir şey ayıklanmadan kaydedildi** — 328/328
+dosya, `app/build/` çıktıları, `.idea` ve derlenmiş `app-debug.apk` dahil.
+Sebebi: SDK internette artık bulunamıyor, yeniden indirilemiyor. Neyin
+gerekeceği belli olmadığı için hepsi duruyor. Depoya girmesi için hem arşivin
+hem projenin kendi `.gitignore`'u atlandı (`git add -f`).
+
+Asıl değerli kısım donanım kütüphaneleri:
+
+| Yol | İçerik |
+|---|---|
+| `app/libs/AraBMApi*.jar` | Java API'leri — parmak izi, kimlik, IC kart, yazıcı, QR |
+| `app/src/main/jniLibs/armeabi/` | 12 adet `.so`, ARM |
+| `app/src/main/jniLibs/armeabi-v7a/` | Aynılarının ARMv7 sürümü |
+
+En büyükleri `libWSQ_library_android.so` (918 KB, parmak izi sıkıştırma),
+`libxml2.so` (896 KB), `libftrScanAPI.so` (780 KB),
+`libAraBMApiFpAlgorithm.so` (188 KB, parmak izi eşleştirme).
+
 ## C++ (2021–2022)
 
 Bir flash bellek yedeğinin `LocalRepo` klasöründe duruyorlardı, hiçbiri git'te
