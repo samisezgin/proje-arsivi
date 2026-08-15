@@ -59,6 +59,19 @@ istemcinizi indirip `client_secrets.json` olarak kaydedin; `token.pickle` ilk
 `taskbarhero_optimizer` içindeki 128 ekran görüntüsü (73 MB) alınmadı — hata
 ayıklama çıktısı, yeniden üretilebilir. Kökteki üç örnek görsel duruyor.
 
+## Gömülü sistem
+
+| Proje | Tarih | Not |
+|---|---|---|
+| `embedded/MaixPy` | Şub 2026 | MaixPy (K210) — yüz tanıma, Wi-Fi testi |
+| `embedded/face_detect` | Haz 2022 | K210 yüz tanıma, eğitilmiş model dosyasıyla (`.kfpkg`, 332 KB) |
+
+## Ek: eşzamanlılık
+
+`java-spring/ConcurrencyTest` (Ara 2025) — çoklu iş parçacığı denemeleri: aktör
+modeli, hızlı günlükleyici, UDP akış işleme, mülakat soruları. Üretilen
+günlükler (`logs/`, `gc.log*`) alınmadı.
+
 ## Arşivlenirken yapılan tek değişiklik
 
 `web3/hardhat-bootcamp/hardhat.config.ts` içinde **Alchemy API anahtarı açıkta
