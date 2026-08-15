@@ -1,0 +1,14 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:MacunNet.Client.Views" 
+        x:Class="MacunNet.Client.Views.MainWindow"
+        x:DataType="local:MainWindow"
+        Title="MacunNet Chat"
+        Width="400" Height="500">
+    <StackPanel>
+        <TextBox Name="UserInput" Watermark="Kullanıcı Adı" />
+        <TextBox Name="MessageInput" Watermark="Mesaj" />
+        <Button Name="SendMessageButton" Content="Gönder" />
+        <ListBox Name="MessagesList" ItemsSource="{Binding Messages}"/>
+    </StackPanel>
+</Window>

@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MacunNet Chat</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/microsoft-signalr/5.0.9/signalr.min.js"></script>
+</head>
+<body>
+    <h2>MacunNet Chat</h2>
+    <input id="userInput" placeholder="Kullanıcı Adı" />
+    <input id="messageInput" placeholder="Mesaj" />
+    <button onclick="sendMessage()">Gönder</button>
+
+    <ul id="messagesList"></ul>
+
+    <script>
+        const connection = new signalR.HubConnectionBuilder()
+            .withUrl("http://localhost:5186/chatHub") // Backend'in URL'sine dikkat et
+            .build();
+
+        connection.start().catch(err => console.error(err));
+
+        connection.on("ReceiveMessage", (user, message) => {
+            const li = document.createElement("li");
+            li.textContent = `${user}: ${message}`;
+            document.getElementById("messagesList").appendChild(li);
+        });
+
+        function sendMessage() {
+            const user = document.getElementById("userInput").value;
+            const message = document.getElementById("messageInput").value;
+            connection.invoke("SendMessage", user, message)
+                .catch(err => console.error(err));
+        }
+    </script>
+</body>
+</html>

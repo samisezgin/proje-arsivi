@@ -1,0 +1,6 @@
+@MacunNet.Server_HostAddress = http://localhost:5186
+
+GET {{MacunNet.Server_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
