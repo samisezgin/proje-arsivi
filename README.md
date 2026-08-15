@@ -59,6 +59,24 @@ istemcinizi indirip `client_secrets.json` olarak kaydedin; `token.pickle` ilk
 `taskbarhero_optimizer` içindeki 128 ekran görüntüsü (73 MB) alınmadı — hata
 ayıklama çıktısı, yeniden üretilebilir. Kökteki üç örnek görsel duruyor.
 
+## C++ (2021–2022)
+
+Bir flash bellek yedeğinin `LocalRepo` klasöründe duruyorlardı, hiçbiri git'te
+değildi. Klasör adlarının çoğu CLion'ın verdiği `untitled` — içerik neyse o
+yazıldı:
+
+| Klasör | İçerik |
+|---|---|
+| `cpp/piworks_assignment` | PiWorks başvuru ödevi |
+| `cpp/untitled1` | **AKIN ROBOTICS mülakat soruları** — `question1.cpp`, `question2.cpp` + cevap arşivi |
+| `cpp/untitled2` | Sıralama motoru (`SortEngine`) + `SAMI_SEZGIN_RSA_TASK.zip` |
+| `cpp/SamiSezgin` | `untitled2`'nin sadeleşmiş hali — aynı `SortEngine` |
+| `cpp/cppreference` | Hesap makinesi, `stack.hpp` |
+| `cpp/untitled`, `untitled3`, `untitled4` | Küçük alıştırmalar |
+
+Derleme çıktıları alınmadı (`build/`, `cmake-build-*`, `.vs/`) — 118 MB'lık
+klasör 101 KB'a indi, kaynak koddan hiçbir şey kaybolmadı.
+
 ## Gömülü sistem
 
 | Proje | Tarih | Not |
